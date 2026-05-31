@@ -174,3 +174,43 @@ button{
 .dark-mode .progress-container{
     background:#334155;
 }
+.subject-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.subject-card h2{
+    margin-bottom:15px;
+}
+
+.subject-input{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+#subjectList{
+    list-style:none;
+}
+
+#subjectList li{
+    background:#f1f5f9;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.dark-mode .subject-card{
+    background:#1e293b;
+    color:white;
+}
+
+.dark-mode #subjectList li{
+    background:#334155;
+    color:white;
+}

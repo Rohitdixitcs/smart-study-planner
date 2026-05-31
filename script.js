@@ -202,3 +202,98 @@ themeToggle.addEventListener(
 );
 
 renderTasks();
+const subjectInput =
+    document.getElementById(
+        "subjectInput"
+    );
+
+const addSubjectBtn =
+    document.getElementById(
+        "addSubjectBtn"
+    );
+
+const subjectList =
+    document.getElementById(
+        "subjectList"
+    );
+
+let subjects =
+    JSON.parse(
+        localStorage.getItem(
+            "subjects"
+        )
+    ) || [];
+
+addSubjectBtn.addEventListener(
+    "click",
+    ()=>{
+
+        const subject =
+            subjectInput.value.trim();
+
+        if(subject === "") return;
+
+        subjects.push(subject);
+
+        renderSubjects();
+
+        subjectInput.value = "";
+    }
+);
+
+function renderSubjects(){
+
+    subjectList.innerHTML = "";
+
+    subjects.forEach(
+        (subject,index)=>{
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+            const text =
+                document.createElement(
+                    "span"
+                );
+
+            text.textContent =
+                subject;
+
+            const deleteBtn =
+                document.createElement(
+                    "button"
+                );
+
+            deleteBtn.textContent =
+                "🗑";
+
+            deleteBtn.onclick =
+                ()=>{
+
+                    subjects.splice(
+                        index,
+                        1
+                    );
+
+                    renderSubjects();
+                };
+
+            li.appendChild(text);
+
+            li.appendChild(deleteBtn);
+
+            subjectList.appendChild(
+                li
+            );
+        }
+    );
+
+    localStorage.setItem(
+        "subjects",
+        JSON.stringify(subjects)
+    );
+}
+
+renderSubjects();
