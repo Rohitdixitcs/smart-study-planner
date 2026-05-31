@@ -2,15 +2,21 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 
-let tasks = [];
+let tasks =
+    JSON.parse(localStorage.getItem("tasks")) || [];
 
 addTaskBtn.addEventListener("click", () => {
 
     const taskText = taskInput.value.trim();
 
-    if(taskText === "") return;
+    if(taskText === ""){
+        return;
+    }
 
-    tasks.push(taskText);
+    tasks.push({
+        text: taskText,
+        completed: false
+    });
 
     renderTasks();
 
@@ -21,15 +27,101 @@ function renderTasks(){
 
     taskList.innerHTML = "";
 
-    tasks.forEach(task => {
+    tasks.forEach((task,index)=>{
 
         const li = document.createElement("li");
 
-        li.textContent = task;
+        li.style.display = "flex";
+        li.style.justifyContent = "space-between";
+        li.style.alignItems = "center";
+
+        const taskText = document.createElement("span");
+
+        taskText.textContent = task.text;
+
+        if(task.completed){
+            taskText.style.textDecoration = "line-through";
+            taskText.style.color = "gray";
+        }
+
+        const actions =
+            document.createElement("div");
+
+        actions.classList.add("task-actions");
+
+        const completeBtn =
+            document.createElement("button");
+
+        completeBtn.textContent = "✓";
+
+        completeBtn.onclick = () => {
+
+            tasks[index].completed =
+                !tasks[index].completed;
+
+            renderTasks();
+        };
+
+        const deleteBtn =
+            document.createElement("button");
+
+        deleteBtn.textContent = "🗑";
+
+        deleteBtn.onclick = () => {
+
+            tasks.splice(index,1);
+
+            renderTasks();
+        };
+
+        actions.appendChild(completeBtn);
+        actions.appendChild(deleteBtn);
+
+        li.appendChild(taskText);
+        li.appendChild(actions);
 
         taskList.appendChild(li);
-
     });
 
-    document.getElementById("totalTasks").textContent = tasks.length;
+    updateStats();
+
+    localStorage.setItem(
+        "tasks",
+        JSON.stringify(tasks)
+    );
 }
+
+function updateStats(){
+
+    const total = tasks.length;
+
+    const completed =
+        tasks.filter(task =>
+            task.completed
+        ).length;
+
+    const progress =
+        total === 0
+        ? 0
+        : Math.round(
+            (completed/total)*100
+        );
+
+    document.getElementById(
+        "totalTasks"
+    ).textContent = total;
+
+    document.getElementById(
+        "completedTasks"
+    ).textContent = completed;
+
+    document.getElementById(
+        "progressPercent"
+    ).textContent = progress + "%";
+
+    document.getElementById(
+        "progressBar"
+    ).style.width = progress + "%";
+}
+
+renderTasks();
