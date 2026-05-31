@@ -117,7 +117,7 @@ wrapper.appendChild(taskText);
         actions.appendChild(completeBtn);
         actions.appendChild(deleteBtn);
 
-        li.appendChild();
+        li.appendChild(wrapper);
         li.appendChild(actions);
 
         taskList.appendChild(li);
@@ -353,6 +353,13 @@ const quoteText =
 
 const newQuoteBtn =
     document.getElementById("newQuoteBtn");
+
+quoteText.textContent =
+    quotes[
+        Math.floor(
+            Math.random() * quotes.length
+        )
+    ];
 
 newQuoteBtn.addEventListener(
     "click",
