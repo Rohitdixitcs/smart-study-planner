@@ -525,7 +525,6 @@ pauseTimerBtn.addEventListener(
     }
 );
 
-resetTimerBtn.addEventListener(
     "click",
     ()=>{
 
