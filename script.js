@@ -524,3 +524,18 @@ pauseTimerBtn.addEventListener(
 
     }
 );
+
+resetTimerBtn.addEventListener(
+    "click",
+    ()=>{
+
+        clearInterval(timer);
+
+        timeLeft = 1500;
+
+        updateTimer();
+
+    }
+);
+
+updateTimer();
