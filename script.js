@@ -125,3 +125,25 @@ function updateStats(){
 }
 
 renderTasks();
+function calculateCountdown(){
+
+    const examDate =
+        document.getElementById("examDate").value;
+
+    if(!examDate) return;
+
+    const today = new Date();
+
+    const exam = new Date(examDate);
+
+    const difference = exam - today;
+
+    const days = Math.ceil(
+        difference / (1000*60*60*24)
+    );
+
+    document.getElementById(
+        "daysLeft"
+    ).textContent =
+        days + " Days Remaining";
+}

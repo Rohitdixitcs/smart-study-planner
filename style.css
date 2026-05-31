@@ -109,3 +109,18 @@ button{
 .task-actions button{
     padding:8px 12px;
 }
+.countdown-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.countdown-card h2{
+    margin-bottom:10px;
+}
+
+.countdown-card input{
+    margin:10px;
+}
