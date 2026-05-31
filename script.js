@@ -12,12 +12,16 @@ addTaskBtn.addEventListener("click", () => {
     if(taskText === ""){
         return;
     }
+    const category =
+    document.getElementById(
+        "categoryInput"
+    ).value;
 
-    tasks.push({
-        text: taskText,
-        completed: false
-    });
-
+tasks.push({
+    text: taskText,
+    category: category,
+    completed: false
+});
     renderTasks();
 
     taskInput.value = "";
@@ -36,8 +40,44 @@ function renderTasks(){
         li.style.alignItems = "center";
 
         const taskText = document.createElement("span");
+        const badge =
+    document.createElement("span");
 
-        taskText.textContent = task.text;
+badge.classList.add(
+    "category-badge"
+);
+
+if(task.category === "Study"){
+    badge.classList.add("study");
+}
+
+if(task.category === "Assignment"){
+    badge.classList.add("assignment");
+}
+
+if(task.category === "Revision"){
+    badge.classList.add("revision");
+}
+
+if(task.category === "Exam Prep"){
+    badge.classList.add("exam");
+}
+
+badge.textContent =
+    task.category;
+
+const wrapper =
+    document.createElement("div");
+
+wrapper.style.display = "flex";
+wrapper.style.alignItems = "center";
+wrapper.style.gap = "10px";
+
+taskText.textContent =
+    task.text;
+
+wrapper.appendChild(badge);
+wrapper.appendChild(taskText);
 
         if(task.completed){
             taskText.style.textDecoration = "line-through";
@@ -77,7 +117,7 @@ function renderTasks(){
         actions.appendChild(completeBtn);
         actions.appendChild(deleteBtn);
 
-        li.appendChild(taskText);
+        li.appendChild(wrapper);
         li.appendChild(actions);
 
         taskList.appendChild(li);

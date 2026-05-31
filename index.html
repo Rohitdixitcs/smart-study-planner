@@ -205,21 +205,39 @@
         </div>
 
         <!-- Task Management -->
+         <div class="task-section">
 
-        <div class="task-section">
+    <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter study task..."
+    >
 
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Enter study task..."
-            >
+    <select id="categoryInput">
 
-            <button id="addTaskBtn">
-                Add Task
-            </button>
+        <option value="Study">
+            📚 Study
+        </option>
 
-        </div>
+        <option value="Assignment">
+            📝 Assignment
+        </option>
 
+        <option value="Revision">
+            🔄 Revision
+        </option>
+
+        <option value="Exam Prep">
+            🎯 Exam Prep
+        </option>
+
+    </select>
+
+    <button id="addTaskBtn">
+        Add Task
+    </button>
+
+</div>
         <ul id="taskList"></ul>
 
     </div>

@@ -322,3 +322,32 @@ button{
     background:#1e293b;
     color:white;
 }
+.category-badge{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    margin-right:10px;
+    color:white;
+}
+
+.study{
+    background:#2563eb;
+}
+
+.assignment{
+    background:#dc2626;
+}
+
+.revision{
+    background:#f59e0b;
+}
+
+.exam{
+    background:#16a34a;
+}
+
+select{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+}
