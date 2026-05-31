@@ -363,3 +363,50 @@ studyTodayBtn.addEventListener(
             streak + " Days";
     }
 );
+const saveWeekBtn =
+    document.getElementById(
+        "saveWeekBtn"
+    );
+
+const weekDays = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday"
+];
+
+weekDays.forEach(day => {
+
+    const savedValue =
+        localStorage.getItem(day);
+
+    if(savedValue){
+
+        document.getElementById(day)
+            .value = savedValue;
+    }
+});
+
+saveWeekBtn.addEventListener(
+    "click",
+    ()=>{
+
+        weekDays.forEach(day => {
+
+            localStorage.setItem(
+                day,
+                document
+                    .getElementById(day)
+                    .value
+            );
+
+        });
+
+        alert(
+            "Weekly Study Plan Saved!"
+        );
+    }
+);

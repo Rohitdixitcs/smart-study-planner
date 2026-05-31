@@ -10,6 +10,8 @@
 
     <div class="container">
 
+        <!-- Header -->
+
         <header>
             <h1>📚 Smart Study Planner</h1>
             <p>Organize your studies and achieve your goals</p>
@@ -18,6 +20,8 @@
                 🌙 Dark Mode
             </button>
         </header>
+
+        <!-- Dashboard -->
 
         <div class="dashboard">
 
@@ -66,6 +70,57 @@
 
             <button id="studyTodayBtn">
                 Studied Today
+            </button>
+
+        </div>
+
+        <!-- Weekly Study Planner -->
+
+        <div class="weekly-card">
+
+            <h2>🗓 Weekly Study Planner</h2>
+
+            <div class="week-grid">
+
+                <div class="day-box">
+                    <h3>Monday</h3>
+                    <input type="text" id="monday" placeholder="Study plan">
+                </div>
+
+                <div class="day-box">
+                    <h3>Tuesday</h3>
+                    <input type="text" id="tuesday" placeholder="Study plan">
+                </div>
+
+                <div class="day-box">
+                    <h3>Wednesday</h3>
+                    <input type="text" id="wednesday" placeholder="Study plan">
+                </div>
+
+                <div class="day-box">
+                    <h3>Thursday</h3>
+                    <input type="text" id="thursday" placeholder="Study plan">
+                </div>
+
+                <div class="day-box">
+                    <h3>Friday</h3>
+                    <input type="text" id="friday" placeholder="Study plan">
+                </div>
+
+                <div class="day-box">
+                    <h3>Saturday</h3>
+                    <input type="text" id="saturday" placeholder="Study plan">
+                </div>
+
+                <div class="day-box">
+                    <h3>Sunday</h3>
+                    <input type="text" id="sunday" placeholder="Study plan">
+                </div>
+
+            </div>
+
+            <button id="saveWeekBtn">
+                Save Weekly Plan
             </button>
 
         </div>
