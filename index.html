@@ -38,14 +38,54 @@
 
         </div>
 
+        <!-- Motivational Quotes -->
+
+        <div class="quote-card">
+
+            <h2>💡 Daily Motivation</h2>
+
+            <p id="quoteText">
+                Success is the sum of small efforts repeated day in and day out.
+            </p>
+
+            <button id="newQuoteBtn">
+                New Quote
+            </button>
+
+        </div>
+
+        <!-- Study Streak -->
+
+        <div class="streak-card">
+
+            <h2>🔥 Study Streak</h2>
+
+            <p id="streakCount">
+                0 Days
+            </p>
+
+            <button id="studyTodayBtn">
+                Studied Today
+            </button>
+
+        </div>
+
+        <!-- Progress Bar -->
+
         <div class="progress-container">
             <div id="progressBar"></div>
         </div>
 
+        <!-- Exam Countdown -->
+
         <div class="countdown-card">
+
             <h2>📅 Exam Countdown</h2>
 
-            <input type="date" id="examDate">
+            <input
+                type="date"
+                id="examDate"
+            >
 
             <button onclick="calculateCountdown()">
                 Calculate
@@ -54,28 +94,35 @@
             <h3 id="daysLeft">
                 Select Exam Date
             </h3>
+
         </div>
+
+        <!-- Subject Management -->
+
         <div class="subject-card">
 
-    <h2>📖 Subjects</h2>
+            <h2>📖 Subjects</h2>
 
-    <div class="subject-input">
+            <div class="subject-input">
 
-        <input
-            type="text"
-            id="subjectInput"
-            placeholder="Enter subject name"
-        >
+                <input
+                    type="text"
+                    id="subjectInput"
+                    placeholder="Enter subject name"
+                >
 
-        <button id="addSubjectBtn">
-            Add Subject
-        </button>
+                <button id="addSubjectBtn">
+                    Add Subject
+                </button>
 
-    </div>
+            </div>
 
-    <ul id="subjectList"></ul>
+            <ul id="subjectList"></ul>
 
-</div>
+        </div>
+
+        <!-- Task Management -->
+
         <div class="task-section">
 
             <input

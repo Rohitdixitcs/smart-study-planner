@@ -214,3 +214,43 @@ button{
     background:#334155;
     color:white;
 }
+.quote-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.quote-card p{
+    margin:15px 0;
+    font-size:18px;
+    font-style:italic;
+}
+
+.dark-mode .quote-card{
+    background:#1e293b;
+    color:white;
+}
+.streak-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.streak-card h2{
+    margin-bottom:10px;
+}
+
+.streak-card p{
+    font-size:24px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.dark-mode .streak-card{
+    background:#1e293b;
+    color:white;
+}

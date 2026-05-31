@@ -297,3 +297,69 @@ function renderSubjects(){
 }
 
 renderSubjects();
+const quotes = [
+    "Success is the sum of small efforts repeated day in and day out.",
+    "Do something today that your future self will thank you for.",
+    "The secret of getting ahead is getting started.",
+    "Small progress is still progress.",
+    "Dream big. Start small. Act now.",
+    "Discipline is choosing between what you want now and what you want most.",
+    "Every expert was once a beginner.",
+    "Your only limit is your mind."
+];
+
+const quoteText =
+    document.getElementById("quoteText");
+
+const newQuoteBtn =
+    document.getElementById("newQuoteBtn");
+
+newQuoteBtn.addEventListener(
+    "click",
+    ()=>{
+
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                quotes.length
+            );
+
+        quoteText.textContent =
+            quotes[randomIndex];
+    }
+);
+let streak =
+    Number(
+        localStorage.getItem(
+            "studyStreak"
+        )
+    ) || 0;
+
+const streakCount =
+    document.getElementById(
+        "streakCount"
+    );
+
+const studyTodayBtn =
+    document.getElementById(
+        "studyTodayBtn"
+    );
+
+streakCount.textContent =
+    streak + " Days";
+
+studyTodayBtn.addEventListener(
+    "click",
+    ()=>{
+
+        streak++;
+
+        localStorage.setItem(
+            "studyStreak",
+            streak
+        );
+
+        streakCount.textContent =
+            streak + " Days";
+    }
+);
