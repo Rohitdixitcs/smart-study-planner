@@ -410,3 +410,92 @@ saveWeekBtn.addEventListener(
         );
     }
 );
+let timer;
+let timeLeft = 1500;
+
+const timerDisplay =
+    document.getElementById(
+        "timerDisplay"
+    );
+
+const startTimerBtn =
+    document.getElementById(
+        "startTimerBtn"
+    );
+
+const pauseTimerBtn =
+    document.getElementById(
+        "pauseTimerBtn"
+    );
+
+const resetTimerBtn =
+    document.getElementById(
+        "resetTimerBtn"
+    );
+
+function updateTimer(){
+
+    const minutes =
+        Math.floor(
+            timeLeft / 60
+        );
+
+    const seconds =
+        timeLeft % 60;
+
+    timerDisplay.textContent =
+        `${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`;
+}
+
+startTimerBtn.addEventListener(
+    "click",
+    ()=>{
+
+        clearInterval(timer);
+
+        timer =
+            setInterval(()=>{
+
+                if(timeLeft > 0){
+
+                    timeLeft--;
+
+                    updateTimer();
+
+                }else{
+
+                    clearInterval(timer);
+
+                    alert(
+                        "Pomodoro Session Complete!"
+                    );
+                }
+
+            },1000);
+
+    }
+);
+
+pauseTimerBtn.addEventListener(
+    "click",
+    ()=>{
+
+        clearInterval(timer);
+
+    }
+);
+
+resetTimerBtn.addEventListener(
+    "click",
+    ()=>{
+
+        clearInterval(timer);
+
+        timeLeft = 1500;
+
+        updateTimer();
+
+    }
+);
+
+updateTimer();

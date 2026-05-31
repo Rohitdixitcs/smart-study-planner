@@ -299,3 +299,26 @@ button{
 .dark-mode .day-box{
     background:#334155;
 }
+.pomodoro-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.pomodoro-card h1{
+    font-size:4rem;
+    margin:20px 0;
+}
+
+.timer-buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.dark-mode .pomodoro-card{
+    background:#1e293b;
+    color:white;
+}
