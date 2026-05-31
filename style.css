@@ -342,12 +342,12 @@ button{
     background:#f59e0b;
 }
 
-.exam{
-    background:#16a34a;
-}
 
 select{
     padding:12px;
     border:none;
     border-radius:10px;
+}
+.exam{
+    background:#16a34a;
 }
