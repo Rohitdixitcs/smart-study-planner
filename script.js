@@ -124,7 +124,6 @@ function updateStats(){
     ).style.width = progress + "%";
 }
 
-renderTasks();
 function calculateCountdown(){
 
     const examDate =
@@ -139,7 +138,8 @@ function calculateCountdown(){
     const difference = exam - today;
 
     const days = Math.ceil(
-        difference / (1000*60*60*24)
+        difference /
+        (1000*60*60*24)
     );
 
     document.getElementById(
@@ -147,3 +147,58 @@ function calculateCountdown(){
     ).textContent =
         days + " Days Remaining";
 }
+
+const themeToggle =
+    document.getElementById(
+        "themeToggle"
+    );
+
+const currentTheme =
+    localStorage.getItem("theme");
+
+if(currentTheme === "dark"){
+
+    document.body.classList.add(
+        "dark-mode"
+    );
+
+    themeToggle.textContent =
+        "☀️ Light Mode";
+}
+
+themeToggle.addEventListener(
+    "click",
+    ()=>{
+
+        document.body.classList.toggle(
+            "dark-mode"
+        );
+
+        if(
+            document.body.classList.contains(
+                "dark-mode"
+            )
+        ){
+
+            localStorage.setItem(
+                "theme",
+                "dark"
+            );
+
+            themeToggle.textContent =
+                "☀️ Light Mode";
+
+        }else{
+
+            localStorage.setItem(
+                "theme",
+                "light"
+            );
+
+            themeToggle.textContent =
+                "🌙 Dark Mode";
+        }
+    }
+);
+
+renderTasks();

@@ -30,6 +30,12 @@ header p{
     margin-top:10px;
 }
 
+#themeToggle{
+    margin-top:15px;
+    background:white;
+    color:black;
+}
+
 .dashboard{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -66,6 +72,22 @@ header p{
     width:0%;
     background:limegreen;
     transition:0.4s;
+}
+
+.countdown-card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.countdown-card h2{
+    margin-bottom:10px;
+}
+
+.countdown-card input{
+    margin:10px;
 }
 
 .task-section{
@@ -109,18 +131,46 @@ button{
 .task-actions button{
     padding:8px 12px;
 }
-.countdown-card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    text-align:center;
+
+/* DARK MODE */
+
+.dark-mode{
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
 }
 
-.countdown-card h2{
-    margin-bottom:10px;
+.dark-mode header{
+    color:white;
 }
 
-.countdown-card input{
-    margin:10px;
+.dark-mode .card{
+    background:#1e293b;
+    color:white;
+}
+
+.dark-mode .countdown-card{
+    background:#1e293b;
+    color:white;
+}
+
+.dark-mode #taskList li{
+    background:#1e293b;
+    color:white;
+}
+
+.dark-mode input{
+    background:#334155;
+    color:white;
+}
+
+.dark-mode button{
+    background:#475569;
+    color:white;
+}
+
+.dark-mode .progress-container{
+    background:#334155;
 }
