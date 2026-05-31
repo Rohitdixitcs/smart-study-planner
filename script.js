@@ -117,7 +117,7 @@ wrapper.appendChild(taskText);
         actions.appendChild(completeBtn);
         actions.appendChild(deleteBtn);
 
-        li.appendChild(wrapper);
+        li.appendChild();
         li.appendChild(actions);
 
         taskList.appendChild(li);
@@ -516,7 +516,7 @@ startTimerBtn.addEventListener(
     }
 );
 
-
+pauseTimerBtn.addEventListener(
     "click",
     ()=>{
 
